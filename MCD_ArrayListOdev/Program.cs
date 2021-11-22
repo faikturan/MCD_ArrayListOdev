@@ -24,6 +24,8 @@ namespace MCD_ArrayListOdev
                 Console.WriteLine("4 - Değer Düzenle");
                 Console.WriteLine("5 - Değer Sil");
                 Console.WriteLine("6 - Uygulama Çıkış");
+                Console.WriteLine("Seçiniz: ");
+                kullaniciSecim = Console.ReadLine();
 
                 switch (kullaniciSecim)
                 {
@@ -80,6 +82,28 @@ namespace MCD_ArrayListOdev
                         System.Threading.Thread.Sleep(2000);
                         break;
                     case "5":
+                        Console.WriteLine("Tüm değerleri mi silmek istiyorsunuz (E/H)");
+                        string kullaniciSilCevap = Console.ReadLine();
+
+                        if (kullaniciSilCevap.ToUpper() == "E")
+                        {
+                            degerListesi.Clear();
+                            Console.WriteLine("Tüm değerler silindi.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Liste içerisinde silmek istediğiniz değeri giriniz");
+                            string kullaniciSilDeger = Console.ReadLine();
+                            if (degerListesi.Contains(kullaniciSilDeger))
+                            {
+                                degerListesi.Remove(kullaniciSilDeger);
+                                Console.WriteLine("Değeriniz Silindi");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Silmek istediğiniz değer liste içerisinde mevcut değil.");
+                            }
+                        }
                         break;
 
                     default:
@@ -87,8 +111,7 @@ namespace MCD_ArrayListOdev
                 }
 
             } while (kullaniciSecim != "6");
-
-
+            
         }
     }
 }
