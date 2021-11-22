@@ -42,7 +42,7 @@ namespace MCD_ArrayListOdev
                             Console.WriteLine("{0}. Değer = {1}", i, degerListesi[i]);
                         }
                         Console.WriteLine("Devam etmek için bir tuşa basınız.");
-                        Console.ReadLine();
+                        Console.ReadKey();
                         break;
                     case "3":
                         Console.WriteLine("Aramak istediğiniz değeri giriniz");
